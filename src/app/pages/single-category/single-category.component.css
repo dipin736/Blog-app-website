@@ -1,4 +1,4 @@
-.row {
-    display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping of items to new rows */
+
+.category{
+    margin-top: -100px;
 }

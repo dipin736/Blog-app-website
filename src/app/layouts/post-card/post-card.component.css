@@ -1,3 +1,16 @@
 .card{
-    max-width:400px;
+    max-width:300px;    
+    height: 430px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.card-img-top{
+    height: 200px;
+
+}
+.category{
+    font-weight: bold;
+    color: var(--body-text-color);
+
 }

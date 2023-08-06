@@ -1,12 +1,20 @@
-    <div class="card shadow effect">
-        <img class="card-img-top" src="https://images.pexels.com/photos/1174932/pexels-photo-1174932.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-        <div class="card-body">
-            <small class="bg-light text-center text-danger">Design</small>
-            <small class="bg-light text-center text-success m-3">Featured</small>
-            <small class="bg-light text-center text-info m-2">Views-100,256</small>
-
-            <h5 class="mt-3">HOW TO START A NEW BLOG IN 2023 EDITED NEW CATEGORY</h5>
-            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum porro repudiandae molestiae harum, vel ipsam doloremque odio iusto autem minima aliquam beatae quidem quia. Impedit iste libero et rerum sit!</p>
-            <small class="bg-light text-center text-warning m-2">LAST UPDATED-FEB 24,2023</small>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="card shadow effect" *ngIf="postData" [routerLink]="['/post',postData.id]">
+                    <img class="card-img-top" src="{{postData.postImgPath}}" alt="">
+                    <div class="card-body">
+                        <small  class="category bg-light text-center text-danger">{{postData.category.category}}</small>
+                        <small class="bg-light text-center text-success m-3" *ngIf="postData.isFeatured">Featured</small>
+                        <small class="bg-light text-center text-info m-2">Views- {{postData.views}}</small>
+                        <h5 class=" category mt-3">{{postData.title}}</h5>
+                        <p class="">{{postData.excerpt}}</p>
+                        <small class="bg-light text-center text-warning m-2">
+                            LAST-UPDATED-{{ postData.cretaedAt | timestampToDate | date }}
+                          </small>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    

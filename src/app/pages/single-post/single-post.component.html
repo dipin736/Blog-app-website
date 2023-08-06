@@ -1,44 +1,29 @@
 <div class="container">
     <div class="row">
+        <div class="col-md-1"></div>
         <div class="col-md-9">
             <div class="card shadow-effect">
                 <img class="card-img-top"
-                    src="https://images.pexels.com/photos/17636977/pexels-photo-17636977/free-photo-of-skyscrapers-in-new-york.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    src="{{postData.postImgPath}}"
                     alt="">
                 <div class="card-body">
-                    <small class="bg-light text-center text-danger">Design</small>
-                    <small class="bg-light text-center text-success m-3">Featured</small>
-                    <small class="bg-light text-center text-info m-2">Views-100,256</small>
-                    <h5 class="mt-3">HOW TO START A NEW BLOG IN 2023 EDITED NEW CATEGORY</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis doloremque dolorem magni
-                        commodi cumque praesentium quia libero rem. Non voluptatibus, expedita quibusdam quis, mollitia
-                        blanditiis voluptatem aliquam est aut amet harum praesentium ipsa ullam fugiat hic veritatis
-                        dolor repellendus placeat porro necessitatibus, dolores sunt ea dolore assumenda. Aut asperiores
-                        vel culpa. Eos voluptatem, beatae saepe iusto qui corrupti dolores nulla ea fuga molestiae
-                        explicabo totam optio blanditiis ducimus incidunt, vitae unde numquam voluptatum inventore quasi
-                        harum soluta. Laboriosam repellat porro reiciendis corrupti, non nostrum ducimus voluptate unde
-                        reprehenderit aliquid nesciunt atque rerum iure sit numquam sequi amet sint repudiandae
-                        necessitatibus repellendus illum obcaecati quia. Necessitatibus expedita optio modi iusto enim
-                        dolor animi numquam, magnam deleniti. Nam aspernatur libero molestiae ipsam, maxime fuga fugit.
-                        Nihil facilis reprehenderit ea ipsam, commodi nobis expedita? Quidem, voluptates autem a
-                        assumenda facere esse aliquid harum adipisci delectus illo magni obcaecati nemo corporis
-                        voluptatum doloremque unde?</p>
-                    <small class="bg-light text-center text-warning m-2">LAST UPDATED-FEB 24,2023</small>
+                    <small class="bg-light text-center text-danger">{{postData.category.category}}</small>
+                    <small class="bg-light text-center text-success m-3" *ngIf="postData.isFeatured">Featured</small>
+                    <small class="bg-light text-center text-info m-2">Views -{{postData.views}}</small>
+                    <small class="bg-light text-center text-warning m-2">LAST UPDATED-{{postData.cretaedAt | timestampToDate |date}}</small>
+                    <h1 class="mt-3">{{postData.title}}</h1>
+                    <p class="mt-3" [innerHTML]="postData.content"></p>
+
                 </div>
             </div>
+            <div class="col-md-1"></div>
             <app-comment-form></app-comment-form>
             <app-comment-list></app-comment-list>
         </div>
-        <div class="col mt-3 mt-md-0">
-            <div class="col-md-12 mb-3">
-                <app-post-card></app-post-card>
+        <!-- <div class="col-md-3 mt-3 mt-md-0">
+            <div *ngFor="let similarpost of similarPostArray; let i = index">
+                <app-post-card [postData]="similarpost"></app-post-card>
             </div>
-            <div class="col-md-12 mb-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-md-12 mb-3">
-                <app-post-card></app-post-card>
-            </div>
-        </div>
+        </div> -->
     </div>
 </div>

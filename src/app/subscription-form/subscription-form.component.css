@@ -7,7 +7,7 @@
     display: inline-block;
 }
 
-.card{
+.container{
     background-color: var(--secondary-color);
    margin-top: 100px;
     

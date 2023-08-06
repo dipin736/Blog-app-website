@@ -1,19 +1,9 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
         <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngFor="let category of categortArray">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Design</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Inspiration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sports</a>
-                </li>  <li class="nav-item">
-                    <a class="nav-link" href="#">Politics</a>
-                </li>  <li class="nav-item">
-                    <a class="nav-link" href="#">Cinema</a>
+                    <a class="nav-link" href="#" [routerLink]="['/category',category.category,category.id]">{{category.category}}</a>
                 </li>
             </ul>
         </div>

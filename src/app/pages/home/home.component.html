@@ -1,52 +1,46 @@
+<!-- featured.component.html -->
 <section class="featured">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 text-center mt-5">
-                <h2 class="text-white">Featured Posts</h2>
-                <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, velit quae qui cupiditate eaque dolorem mollitia cum ullam rerum totam, atque provident dignissimos, suscipit eius nobis! Nobis sunt modi provident.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-lg-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-lg-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-lg-3">
-                <app-post-card></app-post-card>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center mt-5">
+        <h2 class="text-white">Featured Posts</h2>
+        <p class="text-white">Check out these amazing featured posts that are making waves in the community!</p>
+      </div>
     </div>
+    <div class="row">
+      <ng-container *ngFor="let featured of featuredPostArray">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <app-post-card [postData]="featured"></app-post-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </section>
-<section class="container mb-5">
-    <div class="col-md-12 text-center">
-        <h2>Latest Posts</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum neque corrupti minus laborum, ullam corporis perspiciatis, id officia assumenda veritatis dignissimos quae inventore quod, accusantium ex. Blanditiis numquam minus explicabo.</p>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-3">
-                <app-post-card></app-post-card>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-lg-4 col-md-6 mb-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-3">
-                <app-post-card></app-post-card>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-3">
-                <app-post-card></app-post-card>
-            </div>
-        </div>
-    </div>
+
+<section class="container mt-5">
+  <div class="col-md-12 text-center mt-5">
+    <h2>Latest Posts</h2>
+    <p>Stay up-to-date with the latest trends and happenings in the industry with these latest posts.</p>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let latest of latestPostArray; let i = index">
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngIf="i < 4">
+        <app-post-card [postData]="latest"></app-post-card>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row mt-4">
+    <ng-container *ngFor="let latest of latestPostArray; let i = index">
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngIf="i >= 4 && i < 8">
+        <app-post-card [postData]="latest"></app-post-card>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row mt-4">
+    <ng-container *ngFor="let latest of latestPostArray; let i = index">
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngIf="i >= 8 && i < 12">
+        <app-post-card [postData]="latest"></app-post-card>
+      </div>
+    </ng-container>
+  </div>
 </section>
